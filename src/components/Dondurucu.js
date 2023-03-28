@@ -22,8 +22,7 @@ ADIM 1:
 
 ADIM 2:
   Bu mantıksal bir ifadedir. '&&'nin her iki yanındaki ifadeler true ise,
-  sağdaki değer tüm ifadenin değeri olur. '&&'nin her iki tarafında bir ifade varsa
-  ve false sa, soldaki tüm satırın değeri olur. 
+  sağdaki değer tüm ifadenin değeri olur. '&&'nin her iki tarafında bir ifade varsa ve false sa, soldaki tüm satırın değeri olur. 
 
   Sabit yazılmış 'true' döndürücü açık veya kapalı durumuna göre değiştirin.
 
@@ -35,23 +34,29 @@ ADIM 4:
   "not" için kullandığımız operatörü hatırlıyor musunuz??
 */
 
-import React from 'react'; /* STEP 0 */
+import React, { useState } from "react"; /* STEP 0 */
 
 export default function Dondurucu() {
-/* ADIM 1 */
+  /* ADIM 1 */
+
+  const [döndürücüAcik, setdöndürücüAcik] = useState(true);
 
   const toggleDondurucu = () => {
-  /* ADIM 4 */
+    /* ADIM 4 */
   };
 
   return (
-    <div className='widget-spinner container'>
+    <div className="widget-spinner container">
       <h2>Döndürücü</h2>
       {
-        true && <div id='döndürücü' className='spinner'>--+--</div> /* ADIM 2 */
+        true && (
+          <div id="döndürücü" className="spinner">
+            --+--
+          </div>
+        ) /* STEP 2 */
       }
-      <button id='toggleDondurucu' onClick={toggleDondurucu}>
-         Gizle {/* STEP 3 */}
+      <button id="toggleDondurucu" onClick={toggleDondurucu}>
+        Gizle {/* STEP 3 */}
       </button>
     </div>
   );
